@@ -5,7 +5,7 @@ services:
       args:
         - DEV=true
     ports:
-      - '8000:8000'
+      - "8000:8000"
     volumes:
       - ./app:/app
       - dev-static-data:/vol/web
@@ -17,7 +17,8 @@ services:
       - DB_HOST=db
       - DB_NAME=devdb
       - DB_USER=devuser
-      - DB_PASS=devpass
+      - DB_PASS=changeme
+      - DEBUG=1
     depends_on:
       - db
 
@@ -28,7 +29,7 @@ services:
     environment:
       - POSTGRES_DB=devdb
       - POSTGRES_USER=devuser
-      - POSTGRES_PASSWORD=devpass
+      - POSTGRES_PASSWORD=changeme
 
 volumes:
   dev-db-data:
